@@ -18,9 +18,17 @@ Follow the URL link provided: https://jsskilton.github.io/Code-Quiz/
 
 ## Usage
 
-Complete the questions in the quiz by clicking on the relevant answers
+This is the quiz landing page. To view highscores, click the 'View Highscores' button. To start the quiz, click the 'Start Quiz' button.
 
-![screenshot of webpage](screenshot.JPG)
+![screenshot of webpage](Screenshot1.JPG)
+
+After starting the quiz, each question will appear. Time remaining is shown in the top right corner - this is the score that will be saved. After selecting an option, a message will display whether the answer is correct or incorrect. For each incorrect answer, 10 seconds is deducted from the time.
+
+![screenshot of webpage](Screenshot2.JPG)
+
+Highscores are stored in local storage and shown on the screen below. There is the option to clear highscores by pressing the 'Clear Highscores' button.
+
+![screenshot of webpage](Screenshot3.JPG)
 
 ## Credits
 

@@ -36,6 +36,13 @@ function displayQuestion() {
         var choicesContainer = document.getElementById('choices');
         // Clear existing choices
         choicesContainer.innerHTML = '';
+        // Add a paragraph element for feedback message
+        var feedbackElement = document.createElement('p');
+        feedbackElement.id = 'feedback';
+        feedbackElement.textContent = '';
+        // Append the feedback element to the questions container
+        var questionsContainer = document.getElementById('questions');
+        questionsContainer.appendChild(feedbackElement);
         // Loop through each choice in the current question
         for (var i = 0; i < currentQuestion.choices.length; i++) {
             // Create a button element for each choice
@@ -55,16 +62,25 @@ function displayQuestion() {
 
 function checkAnswer(userChoice) {
     var currentQuestion = questions[currentQuestionIndex];
+    var feedbackElement = document.getElementById('feedback');
+    // Check for correct answer
     if (userChoice === currentQuestion.choices[currentQuestion.correctAnswer]) {
-        // Correct answer, move to the next question
-        currentQuestionIndex++;
-        displayQuestion();
+        feedbackElement.textContent = 'Correct';
     } else {
-        // Incorrect answer, deduct 10 seconds and move to the next question
+        // Incorrect answer
         timeLeft -= 10;
+        var encodedCorrectAnswer = document.createElement('div');
+        encodedCorrectAnswer.innerText = currentQuestion.choices[currentQuestion.correctAnswer];
+        // Show what the correct answer is
+        feedbackElement.innerHTML = 'Incorrect. The correct answer was ' + encodedCorrectAnswer.innerHTML;
+    }
+    // Clear the feedback after 1.5 seconds
+    setTimeout(function () {
+        feedbackElement.textContent = '';
+        // Move to the next question
         currentQuestionIndex++;
         displayQuestion();
-    }
+    }, 1500);
 }
 
 // Function to update the final score on the end-screen
@@ -116,8 +132,6 @@ function submitScore() {
         window.location.href = 'highscores.html';
     }
 }
-
-
 
 function hideElement(elementId) {
     document.getElementById(elementId).style.display = 'none';
