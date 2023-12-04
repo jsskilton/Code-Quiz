@@ -2,11 +2,6 @@
 function displayHighScores() {
   // Get the reference to the 'highscores' element in the HTML
   var highscoresList = document.getElementById('highscores');
-  // Check if the 'highscores' element exists
-  if (!highscoresList) {
-    console.error("Element with id 'highscores' not found");
-    return;
-  }
   // Retrieve high scores from local storage
   var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
   // Clear the existing content inside the 'highscores' element

@@ -104,8 +104,6 @@ function endQuiz() {
     hideElement('questions');
     showElement('end-screen');
     document.getElementById('final-score').textContent = userScore;
-    // Add logic to handle the end of the quiz
-    // For example, display the final score, hide the question screen, and show the end screen
 }
 
 function submitScore() {
@@ -144,11 +142,6 @@ function showElement(elementId) {
 function displayHighScores(scores) {
     // Get the reference to the 'highscores' element in the HTML
     var highscoresList = document.getElementById('highscores');
-    // Check if the 'highscores' element exists
-    if (!highscoresList) {
-        console.error("Element with id 'highscores' not found");
-        return;
-    }
     // Clear the existing content inside the 'highscores' element
     highscoresList.innerHTML = '';
     // Iterate through each score in the 'scores' array
