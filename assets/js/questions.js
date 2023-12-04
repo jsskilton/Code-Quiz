@@ -3,7 +3,7 @@ var questions = [
       question: 'Q1: Inside which HTML element do we put the JavaScript?',
       choices: ['<js>', '<scripting>', '<script>', '<javascript>'],
       // Index of the correct answer in the choices array i.e. '<js>' DONT FORGET ARRAYS ARE INDEXED AT ZERO
-      correctAnswer: 0
+      correctAnswer: 2
     },
     {
       question: 'Q2: What is the correct JavaScript syntax to change the content of the HTML element: <p id="demo">This is a demonstration.</p>',
